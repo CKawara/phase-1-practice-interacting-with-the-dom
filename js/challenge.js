@@ -52,3 +52,14 @@ function pauseNResume(){
     }
 }
 pause.addEventListener('click', pauseNResume)
+
+let form = document.querySelector('form')
+form.addEventListener('submit', (e)=>{
+    e.preventDefault()
+    let comment = document.getElementById('comment-input').value
+    let li = document.createElement('li')
+    li.textContent = comment
+    let comments = document.querySelector(".comments")
+    comments.appendChild(li)
+    form.reset()
+})
